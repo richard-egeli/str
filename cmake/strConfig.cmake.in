@@ -1,0 +1,5 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/strTargets.cmake")
+check_required_components(str)
+set(str_FOUND TRUE)
