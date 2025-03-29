@@ -143,6 +143,7 @@ char* string_alloc(size_t size) {
         return NULL;
     }
 
+    str->capacity = size + 1;
     return str->data;
 }
 
@@ -152,5 +153,6 @@ char* string_new(void) {
         return NULL;
     }
 
+    str->capacity = 1;
     return str->data;
 }
