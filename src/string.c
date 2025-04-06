@@ -88,7 +88,7 @@ ssize_t __string_append_impl(char** base, const char* str) {
     string_t* s2            = (string_t*)((uintptr_t)str - offset);
     const size_t new_length = s1->length + s2->length;
 
-    if (new_length > s1->capacity) {
+    if (new_length >= s1->capacity) {
         string_t* ptr = realloc(s1, sizeof(string_t) + new_length + 1);
         if (ptr == NULL) {
             return -ENOMEM;
